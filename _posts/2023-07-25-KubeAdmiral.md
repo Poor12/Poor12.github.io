@@ -178,11 +178,11 @@ KubeAdmiral提供了一个针对不可调度的Pod进行自动迁移的能力，
 | ------------------ | ----------------------- | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
 | 0                  | min((6*1+3-1)/3, 1) = 1 | 1                | 3                | 0                | 2                | 0                |
 
-最终调度结果为 member1：member2：member3 = 1：3：2.
+最终调度结果为 member1：member2：member3 = 1：3：2。
 
-当 currentTotalOkReplicas < desiredTotalReplicas时，做扩容的操作，并将实例扩容给desiredReplicas > currentReplicas的集群。
+当currentTotalOkReplicas < desiredTotalReplicas时，做扩容的操作，并将实例扩容给desiredReplicas > currentReplicas的集群。
 
-假设member1、member2、member3集群容量均为1：
+假设member1、member2、member3集群容量均为1：1：1。
 
 当前实例：
 
@@ -196,4 +196,4 @@ KubeAdmiral提供了一个针对不可调度的Pod进行自动迁移的能力，
 | ------------------ | ----------------------- | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
 | 3                  | min((6*1+3-1)/3, 1) = 1 | 1                | 1                | 1                | 1                | 1                |
 
-若保留不可调度的实例后，member1：member2：member3 = 2：2：2，若不保留，则是member1：member2：member3 = 1：1：1
+若保留不可调度的实例后，member1：member2：member3 = 2：2：2，若不保留，则是member1：member2：member3 = 1：1：1。
